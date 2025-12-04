@@ -8,9 +8,58 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Adam Brady - Portfolio</title>
   </head>
   <body>
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <section
+      class="h-screen flex items-center justify-center bg-gradient-to-br from-myColor-900 to-myColor-800"
+    >
+      <div class="text-center space-y-8">
+        <div>
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-white">
+            Adam Brady
+          </h1>
+          <p class="text-xl md:text-2xl text-myColor-100 mt-4">
+            <span id="typed"></span>
+          </p>
+        </div>
+        <div class="flex gap-6 justify-center">
+          <a
+            href="https://github.com/soundslikework"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 bg-white text-myColor-900 font-semibold rounded-lg hover:bg-myColor-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-transform"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://linkedin.com/in/adampbrady"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 bg-myColor-600 text-white font-semibold rounded-lg hover:bg-myColor-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-transform"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </section>
+    <script>
+      import Typed from "typed.js";
+
+      const typed = new Typed("#typed", {
+        strings: [
+          "Senior Engineer",
+          "Engineering Leader",
+          "Problem Solver",
+          "All-purpose Nerd",
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        backDelay: 2000,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    </script>
   </body>
 </html>
