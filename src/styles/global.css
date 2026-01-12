@@ -2,16 +2,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-myColor-50: #eeeefa;
-  --color-myColor-100: #dddef6;
-  --color-myColor-200: #bcbdec;
-  --color-myColor-300: #9a9be3;
-  --color-myColor-400: #797ad9;
-  --color-myColor-500: #5759d0;
-  --color-myColor-600: #4647a6;
-  --color-myColor-700: #34357d;
-  --color-myColor-800: #232453;
-  --color-myColor-900: #11122a;
+  --color-myColor-50: #f8f9fa;
+  --color-myColor-100: #e9ecef;
+  --color-myColor-200: #dee2e6;
+  --color-myColor-300: #ced4da;
+  --color-myColor-400: #adb5bd;
+  --color-myColor-500: #6c757d;
+  --color-myColor-600: #495057;
+  --color-myColor-700: #343a40;
+  --color-myColor-800: #212529;
+  --color-myColor-900: #0d1117;
 
   /* Font Families */
   --font-family-title: "Azeret Mono", monospace;
