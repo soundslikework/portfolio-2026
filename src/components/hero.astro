@@ -20,7 +20,7 @@ import abProfile from "../assets/ab-profile.jpeg";
           <span class="hero-name-inner block">ADAM</span>
         </span>
         <span class="hero-name-line block overflow-hidden">
-          <span class="hero-name-inner block">BRADY<span class="name-rule"></span></span>
+          <span class="hero-name-inner block">BRADY<span class="name-rule" aria-hidden="true"></span></span>
         </span>
       </h1>
 
@@ -62,7 +62,7 @@ import abProfile from "../assets/ab-profile.jpeg";
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce">
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce" aria-hidden="true">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M7 10L12 15L17 10" stroke="#f87060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
@@ -70,24 +70,18 @@ import abProfile from "../assets/ab-profile.jpeg";
 </section>
 
 <script>
-  // Trigger name reveal animation after a short delay
-  document.addEventListener("DOMContentLoaded", () => {
-    const inners = document.querySelectorAll(".hero-name-inner");
-    setTimeout(() => {
-      inners.forEach((el, i) => {
-        (el as HTMLElement).style.transitionDelay = `${i * 150}ms`;
-        (el as HTMLElement).classList.add("revealed");
-      });
-    }, 100);
-
-    // Fade in tagline + links after name finishes
-    const fadeEls = document.querySelectorAll(".hero-tagline, .hero-link");
-    setTimeout(() => {
-      fadeEls.forEach((el) => {
-        (el as HTMLElement).classList.add("revealed");
-      });
-    }, 700);
+  const inners = document.querySelectorAll(".hero-name-inner");
+  inners.forEach((el, i) => {
+    (el as HTMLElement).style.transitionDelay = `${100 + i * 150}ms`;
+    (el as HTMLElement).classList.add("revealed");
   });
+
+  const fadeEls = document.querySelectorAll(".hero-tagline, .hero-link");
+  setTimeout(() => {
+    fadeEls.forEach((el) => {
+      (el as HTMLElement).classList.add("revealed");
+    });
+  }, 700);
 </script>
 
 <style>
@@ -166,6 +160,10 @@ import abProfile from "../assets/ab-profile.jpeg";
     letter-spacing: 0.08em;
   }
 
+  .location-badge::first-letter {
+    color: #f87060;
+  }
+
   .hero-image-ring {
     background: linear-gradient(135deg, #f87060, #fbbdac, #f87060);
   }
@@ -186,5 +184,20 @@ import abProfile from "../assets/ab-profile.jpeg";
 
   .scroll-bounce {
     animation: bounce 2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-name-inner {
+      transform: translateY(0);
+      transition: none;
+    }
+    .hero-tagline,
+    .hero-link {
+      opacity: 1;
+      transition: none;
+    }
+    .scroll-bounce {
+      animation: none;
+    }
   }
 </style>
