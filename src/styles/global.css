@@ -15,8 +15,8 @@
   --color-myColor-900: #0f0e0d;
 
   /* Accent — coral */
-  --color-accent: #F87060;
-  --color-accent-light: #FBBDAC;
+  --color-accent: #f87060;
+  --color-accent-light: #fbbdac;
 
   /* Font Families */
   --font-family-display: "DM Serif Display", serif;
@@ -36,12 +36,12 @@ html {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1117;
+  background: #0f0e0d;
 }
 ::-webkit-scrollbar-thumb {
-  background: #F87060;
+  background: #f87060;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #FBBDAC;
+  background: #fbbdac;
 }
