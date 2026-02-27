@@ -8,7 +8,7 @@
 >
   <div class="text-center space-y-8">
     <div class="md:max-w-2xl m-auto px-6">
-      <h2 class="about-heading font-bold leading-none mb-2">
+      <h2 class="about-heading leading-none mb-2">
         Hi
       </h2>
       <span class="heading-accent-bar block h-0.5 mt-3 mx-auto w-12 rounded-full mb-10"></span>
@@ -78,7 +78,7 @@
     font-weight: 600;
     font-family: var(--font-mono);
     backdrop-filter: blur(4px);
-    transition: all 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
   }
 
@@ -87,5 +87,11 @@
     color: #fbbdac;
     background: rgba(248, 112, 96, 0.1);
     box-shadow: 0 0 12px rgba(248, 112, 96, 0.2);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .skill-badge {
+      transition: none;
+    }
   }
 </style>
