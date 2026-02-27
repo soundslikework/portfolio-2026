@@ -8,7 +8,7 @@ import TimelineItem from "./TimelineItem.astro";
 >
   <div class="max-w-4xl mx-auto px-6">
     <h2
-      class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono text-white text-center mb-16"
+      class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono text-myColor-50 text-center mb-16"
     >
       Selected Experience
     </h2>
@@ -56,10 +56,13 @@ import TimelineItem from "./TimelineItem.astro";
     },
     { threshold: 0.15 }
   );
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   items.forEach((item) => {
-    (item as HTMLElement).style.opacity = "0";
-    (item as HTMLElement).style.transform = "translateY(24px)";
-    (item as HTMLElement).style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    if (!prefersReduced) {
+      (item as HTMLElement).style.opacity = "0";
+      (item as HTMLElement).style.transform = "translateY(24px)";
+      (item as HTMLElement).style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    }
     observer.observe(item);
   });
 </script>

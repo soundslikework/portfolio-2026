@@ -12,8 +12,8 @@ const { title, company, year, summary } = Astro.props;
 <li class="timeline-item">
   <div class="timeline-content">
     <p class="timeline-year">{year}</p>
-    <p class="timeline-company">{company}</p>
-    <h3 class="timeline-title">{title}</h3>
+    <h3 class="timeline-company">{company}</h3>
+    <p class="timeline-title">{title}</p>
     <p class="timeline-summary">{summary}</p>
   </div>
 </li>
@@ -63,7 +63,7 @@ const { title, company, year, summary } = Astro.props;
   .timeline-year {
     font-size: 0.75rem;
     color: #f87060;
-    font-family: "Azeret Mono", monospace;
+    font-family: var(--font-family-title);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
