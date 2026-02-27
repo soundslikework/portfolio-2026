@@ -3,33 +3,33 @@
 ---
 
 <section
-  class="h-screen flex items-center justify-center bg-linear-to-b from-myColor-800 to-myColor-700"
+  id="about"
+  class="min-h-screen flex items-center justify-center bg-myColor-800 py-24"
 >
   <div class="text-center space-y-8">
-    <div class="md:max-w-1/2 m-auto">
-      <h2
-        class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono text-white"
-      >
+    <div class="md:max-w-2xl m-auto px-6">
+      <h2 class="about-heading font-bold leading-none mb-2">
         Hi
-        <span class="heading-accent-bar block h-1 mt-2 mx-auto w-16 rounded-full"></span>
       </h2>
-      <p class="text-l md:text-xl text-myColor-100 mt-6 font-sans">
+      <span class="heading-accent-bar block h-0.5 mt-3 mx-auto w-12 rounded-full mb-10"></span>
+
+      <p class="text-lg md:text-xl text-myColor-100 mt-6 font-sans leading-relaxed">
         I'm Adam, a Toronto-based (but remote-friendly) Engineering leader. I'm
         a Senior Engineer, an Engineering Manager, project planner, delivery
         lead... tl;dr: I can do what needs to be done.
       </p>
-      <p class="text-l md:text-xl text-myColor-100 mt-4 font-sans">
+      <p class="text-lg md:text-xl text-myColor-100 mt-4 font-sans leading-relaxed">
         I'm full-stack, but frontend-focused. Do you need someone to manage a
         design system? Lead a team to deliver a complex project? Have a hard
         conversation about deadlines & capacity planning? I can help with that.
       </p>
-      <p class="text-l md:text-xl text-myColor-100 mt-4 font-sans">
+      <p class="text-lg md:text-xl text-myColor-100 mt-4 font-sans leading-relaxed">
         I love enabling engineers to do their best, by introducing and iterating
         on processes, coaching and facilitating conversations, and especially
         using AI to keep everyone moving.
       </p>
       <div>
-        <h3 class="text-4xl text-myColor-100 mt-16 font-mono font-bold">
+        <h3 class="text-3xl text-myColor-100 mt-16 font-mono font-bold">
           Skills & Frameworks
         </h3>
         <ul class="flex flex-wrap justify-center gap-3 mt-6">
@@ -57,29 +57,35 @@
 </section>
 
 <style>
+  .about-heading {
+    font-family: var(--font-family-display);
+    font-size: clamp(64px, 10vw, 120px);
+    color: #f0ede8;
+  }
+
   .heading-accent-bar {
-    background: linear-gradient(to right, #10b981, #34d399);
+    background: linear-gradient(to right, #f87060, #fbbdac);
   }
 
   .skill-badge {
     display: inline-block;
     padding: 6px 16px;
     border-radius: 9999px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: rgba(255, 255, 255, 0.07);
-    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(240, 237, 232, 0.9);
     font-size: 0.875rem;
     font-weight: 600;
-    font-family: var(--font-sans);
+    font-family: var(--font-mono);
     backdrop-filter: blur(4px);
     transition: all 0.2s ease;
     cursor: default;
   }
 
   .skill-badge:hover {
-    border-color: #10b981;
-    color: #34d399;
-    background: rgba(16, 185, 129, 0.1);
-    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+    border-color: #f87060;
+    color: #fbbdac;
+    background: rgba(248, 112, 96, 0.1);
+    box-shadow: 0 0 12px rgba(248, 112, 96, 0.2);
   }
 </style>
