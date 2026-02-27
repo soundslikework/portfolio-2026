@@ -7,22 +7,19 @@ import abProfile from "../assets/ab-profile.jpeg";
   class="h-screen flex items-center justify-center bg-linear-to-b from-myColor-900 to-myColor-800 relative overflow-hidden"
 >
   <!-- Subtle dot-grid background texture -->
-  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 32px 32px;"></div>
+  <div class="hero-dot-grid absolute inset-0 pointer-events-none"></div>
 
   <div class="text-center space-y-8 relative z-10">
     <div>
       <!-- Profile image with emerald accent ring -->
-      <div class="w-48 h-48 mx-auto mb-6 rounded-full p-[3px]" style="background: linear-gradient(135deg, #10b981, #34d399, #059669);">
+      <div class="hero-image-ring w-48 h-48 mx-auto mb-6 rounded-full p-[3px]">
         <Image
           src={abProfile}
           alt="Adam Brady"
           class="w-full h-full rounded-full object-cover"
         />
       </div>
-      <h1
-        class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono"
-        style="background: linear-gradient(to right, #ffffff, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
-      >
+      <h1 class="hero-name text-6xl md:text-7xl lg:text-8xl font-bold font-mono">
         Adam Brady
       </h1>
       <p class="text-xl md:text-2xl text-myColor-100 mt-4 font-sans">
@@ -42,10 +39,7 @@ import abProfile from "../assets/ab-profile.jpeg";
         href="https://linkedin.com/in/adampbrady"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-6 py-3 font-semibold rounded-lg font-sans shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-white"
-        style="background: linear-gradient(135deg, #10b981, #059669);"
-        onmouseover="this.style.background='linear-gradient(135deg, #34d399, #10b981)'"
-        onmouseout="this.style.background='linear-gradient(135deg, #10b981, #059669)'"
+        class="hero-linkedin-btn px-6 py-3 font-semibold rounded-lg font-sans shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-white"
       >
         LinkedIn
       </a>
@@ -80,10 +74,35 @@ import abProfile from "../assets/ab-profile.jpeg";
 </script>
 
 <style>
+  .hero-dot-grid {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .hero-image-ring {
+    background: linear-gradient(135deg, #10b981, #34d399, #059669);
+  }
+
+  .hero-name {
+    background: linear-gradient(to right, #ffffff, #34d399);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-linkedin-btn {
+    background: linear-gradient(135deg, #10b981, #059669);
+  }
+
+  .hero-linkedin-btn:hover {
+    background: linear-gradient(135deg, #34d399, #10b981);
+  }
+
   @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0); }
     50% { transform: translateX(-50%) translateY(8px); }
   }
+
   .scroll-bounce {
     animation: bounce 2s ease-in-out infinite;
   }
