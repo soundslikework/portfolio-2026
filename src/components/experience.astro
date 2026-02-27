@@ -41,6 +41,28 @@ import TimelineItem from "./TimelineItem.astro";
   </div>
 </section>
 
+<script>
+  const items = document.querySelectorAll(".timeline-item");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).style.opacity = "1";
+          (entry.target as HTMLElement).style.transform = "translateY(0)";
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  items.forEach((item) => {
+    (item as HTMLElement).style.opacity = "0";
+    (item as HTMLElement).style.transform = "translateY(24px)";
+    (item as HTMLElement).style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    observer.observe(item);
+  });
+</script>
+
 <style>
   .timeline {
     list-style: none;
@@ -49,7 +71,7 @@ import TimelineItem from "./TimelineItem.astro";
     position: relative;
   }
 
-  /* Vertical line along the left */
+  /* Accent gradient vertical line */
   .timeline::before {
     content: "";
     position: absolute;
@@ -57,6 +79,6 @@ import TimelineItem from "./TimelineItem.astro";
     top: 0;
     bottom: 0;
     width: 2px;
-    background: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(to bottom, #10b981, rgba(16, 185, 129, 0.1));
   }
 </style>

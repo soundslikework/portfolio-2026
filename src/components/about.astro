@@ -11,8 +11,9 @@
         class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono text-white"
       >
         Hi
+        <span class="block h-1 mt-2 mx-auto w-16 rounded-full" style="background: linear-gradient(to right, #10b981, #34d399);"></span>
       </h2>
-      <p class="text-l md:text-xl text-myColor-100 mt-4 font-sans">
+      <p class="text-l md:text-xl text-myColor-100 mt-6 font-sans">
         I'm Adam, a Toronto-based (but remote-friendly) Engineering leader. I'm
         a Senior Engineer, an Engineering Manager, project planner, delivery
         lead... tl;dr: I can do what needs to be done.
@@ -31,32 +32,50 @@
         <h3 class="text-4xl text-myColor-100 mt-16 font-mono font-bold">
           Skills & Frameworks
         </h3>
-        <ul class="grid md:grid-cols-2 gap-4 mt-4">
-          <li class="text-m text-myColor-100 font-bold font-sans">
-            JavaScript
-          </li>
-          <li class="text-m text-myColor-100 font-bold font-sans">React</li>
-          <li class="text-m text-myColor-100 font-bold font-sans">Node.js</li>
-          <li class="text-m text-myColor-100 font-bold font-sans">
-            TypeScript
-          </li>
-          <li class="text-m text-myColor-100 font-bold font-sans">Git</li>
-          <li class="text-m text-myColor-100 font-bold font-sans">
-            Design Systems
-          </li>
-          <li class="text-m text-myColor-100 font-bold font-sans">
-            React Testing Library
-          </li>
-          <li class="text-m text-myColor-100 font-bold font-sans">Python 🐍</li>
-          <li class="text-m text-myColor-100 font-bold font-sans">
-            Project Planning
-          </li>
-          <li class="text-m text-myColor-100 font-bold font-sans">Linear</li>
-          <li class="text-m text-myColor-100 font-bold font-sans">
-            AI Engineering
-          </li>
+        <ul class="flex flex-wrap justify-center gap-3 mt-6">
+          {[
+            "JavaScript",
+            "React",
+            "Node.js",
+            "TypeScript",
+            "Git",
+            "Design Systems",
+            "React Testing Library",
+            "Python 🐍",
+            "Project Planning",
+            "Linear",
+            "AI Engineering",
+          ].map((skill) => (
+            <li>
+              <span class="skill-badge">{skill}</span>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .skill-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+    cursor: default;
+  }
+
+  .skill-badge:hover {
+    border-color: #10b981;
+    color: #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
+  }
+</style>

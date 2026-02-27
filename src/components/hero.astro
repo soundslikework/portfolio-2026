@@ -4,17 +4,24 @@ import abProfile from "../assets/ab-profile.jpeg";
 ---
 
 <section
-  class="h-screen flex items-center justify-center bg-linear-to-b from-myColor-900 to-myColor-800"
+  class="h-screen flex items-center justify-center bg-linear-to-b from-myColor-900 to-myColor-800 relative overflow-hidden"
 >
-  <div class="text-center space-y-8">
+  <!-- Subtle dot-grid background texture -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 32px 32px;"></div>
+
+  <div class="text-center space-y-8 relative z-10">
     <div>
-      <Image
-        src={abProfile}
-        alt="Adam Brady"
-        class="w-48 h-48 rounded-full mx-auto shadow-lg"
-      />
+      <!-- Profile image with emerald accent ring -->
+      <div class="w-48 h-48 mx-auto mb-6 rounded-full p-[3px]" style="background: linear-gradient(135deg, #10b981, #34d399, #059669);">
+        <Image
+          src={abProfile}
+          alt="Adam Brady"
+          class="w-full h-full rounded-full object-cover"
+        />
+      </div>
       <h1
-        class="text-6xl md:text-7xl lg:text-8xl font-bold text-white font-mono"
+        class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono"
+        style="background: linear-gradient(to right, #ffffff, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"
       >
         Adam Brady
       </h1>
@@ -27,7 +34,7 @@ import abProfile from "../assets/ab-profile.jpeg";
         href="https://github.com/soundslikework"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-6 py-3 bg-white text-myColor-900 font-semibold rounded-lg font-sans hover:bg-myColor-50 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-transform"
+        class="px-6 py-3 bg-white text-myColor-900 font-semibold rounded-lg font-sans hover:bg-myColor-50 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5"
       >
         GitHub
       </a>
@@ -35,17 +42,28 @@ import abProfile from "../assets/ab-profile.jpeg";
         href="https://linkedin.com/in/adampbrady"
         target="_blank"
         rel="noopener noreferrer"
-        class="px-6 py-3 bg-myColor-600 text-white font-semibold rounded-lg font-sans hover:bg-myColor-700 transition-colors duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-transform"
+        class="px-6 py-3 font-semibold rounded-lg font-sans shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-white"
+        style="background: linear-gradient(135deg, #10b981, #059669);"
+        onmouseover="this.style.background='linear-gradient(135deg, #34d399, #10b981)'"
+        onmouseout="this.style.background='linear-gradient(135deg, #10b981, #059669)'"
       >
         LinkedIn
       </a>
     </div>
   </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7 10L12 15L17 10" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
 </section>
+
 <script>
   import Typed from "typed.js";
 
-  const typed = new Typed("#typed", {
+  new Typed("#typed", {
     strings: [
       "Senior Engineer",
       "Engineering Leader",
@@ -60,3 +78,13 @@ import abProfile from "../assets/ab-profile.jpeg";
     cursorChar: "|",
   });
 </script>
+
+<style>
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+  .scroll-bounce {
+    animation: bounce 2s ease-in-out infinite;
+  }
+</style>
