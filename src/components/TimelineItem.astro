@@ -11,9 +11,9 @@ const { title, company, year, summary } = Astro.props;
 
 <li class="timeline-item">
   <div class="timeline-content">
-    <h3 class="timeline-title">{title}</h3>
-    <p class="timeline-company">{company}</p>
     <p class="timeline-year">{year}</p>
+    <p class="timeline-company">{company}</p>
+    <h3 class="timeline-title">{title}</h3>
     <p class="timeline-summary">{summary}</p>
   </div>
 </li>
@@ -29,7 +29,7 @@ const { title, company, year, summary } = Astro.props;
     padding-bottom: 0;
   }
 
-  /* Circle dot on the timeline */
+  /* Coral dot on the timeline */
   .timeline-item::before {
     content: "";
     position: absolute;
@@ -38,52 +38,59 @@ const { title, company, year, summary } = Astro.props;
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #10b981;
-    border: 2px solid #34d399;
-    box-shadow: 0 0 10px 3px rgba(16, 185, 129, 0.4), 0 0 0 4px rgba(16, 185, 129, 0.1);
+    background: #f87060;
+    border: 2px solid #fbbdac;
+    box-shadow: 0 0 10px 3px rgba(248, 112, 96, 0.4), 0 0 0 4px rgba(248, 112, 96, 0.1);
     z-index: 1;
   }
 
   .timeline-content {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.06);
     padding: 24px;
     border-radius: 8px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
   }
 
   .timeline-content:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.09);
     transform: translateX(5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(248, 112, 96, 0.15);
   }
 
-  .timeline-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    margin: 0 0 8px 0;
+  /* Year: top label, coral, mono — comes first in DOM order */
+  .timeline-year {
+    font-size: 0.75rem;
+    color: #f87060;
+    font-family: "Azeret Mono", monospace;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 6px 0;
   }
 
+  /* Company: prominent — large and white */
   .timeline-company {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f0ede8;
     margin: 0 0 4px 0;
+  }
+
+  /* Title: subordinate — muted italic */
+  .timeline-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #8c8680;
+    margin: 0 0 16px 0;
     font-style: italic;
   }
 
-  .timeline-year {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.7);
-    margin: 0 0 16px 0;
-    font-weight: 600;
-  }
-
   .timeline-summary {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.85);
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    color: rgba(240, 237, 232, 0.75);
+    line-height: 1.7;
     margin: 0;
   }
 
@@ -92,12 +99,14 @@ const { title, company, year, summary } = Astro.props;
       padding-left: 30px;
     }
 
-    .timeline-title {
-      font-size: 1.25rem;
-    }
-
     .timeline-company {
-      font-size: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-content {
+      transition: none;
     }
   }
 </style>
