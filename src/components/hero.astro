@@ -11,8 +11,9 @@ import abProfile from "../assets/ab-profile.jpeg";
   <div class="hero-dot-grid absolute inset-0 pointer-events-none"></div>
 
   <!-- Two-column layout -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center">
-
+  <div
+    class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center"
+  >
     <!-- Left: Name + tagline + CTAs -->
     <div>
       <h1 class="hero-name leading-none mb-4" aria-label="Adam Brady">
@@ -20,12 +21,14 @@ import abProfile from "../assets/ab-profile.jpeg";
           <span class="hero-name-inner block">ADAM</span>
         </span>
         <span class="hero-name-line block overflow-hidden">
-          <span class="hero-name-inner block">BRADY<span class="name-rule" aria-hidden="true"></span></span>
+          <span class="hero-name-inner block"
+            >BRADY<span class="name-rule" aria-hidden="true"></span></span
+          >
         </span>
       </h1>
 
       <p class="hero-tagline font-sans mt-6 mb-10">
-        Engineering leader, frontend-focused. I ship things.
+        Engineering manager, frontend-focused developer. My teams ship things.
       </p>
 
       <div class="flex gap-8">
@@ -64,9 +67,23 @@ import abProfile from "../assets/ab-profile.jpeg";
   </div>
 
   <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce" aria-hidden="true">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7 10L12 15L17 10" stroke="#f87060" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <div
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce"
+    aria-hidden="true"
+  >
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10L12 15L17 10"
+        stroke="#f87060"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
     </svg>
   </div>
 </section>
@@ -88,7 +105,11 @@ import abProfile from "../assets/ab-profile.jpeg";
 
 <style>
   .hero-dot-grid {
-    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px
+    );
     background-size: 24px 24px;
   }
 
@@ -141,7 +162,9 @@ import abProfile from "../assets/ab-profile.jpeg";
     color: #f0ede8;
     text-decoration: none;
     opacity: 0;
-    transition: opacity 400ms ease, color 200ms ease;
+    transition:
+      opacity 400ms ease,
+      color 200ms ease;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
@@ -180,8 +203,13 @@ import abProfile from "../assets/ab-profile.jpeg";
   }
 
   @keyframes bounce {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(8px); }
+    0%,
+    100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(8px);
+    }
   }
 
   .scroll-bounce {
