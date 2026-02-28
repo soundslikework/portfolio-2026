@@ -1,0 +1,138 @@
+---
+const sections = [
+  { id: "hero", label: "Home" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "contact", label: "Contact" },
+];
+---
+
+<nav class="side-nav" aria-label="Page sections">
+  <div class="side-nav-line" aria-hidden="true"></div>
+  {sections.map((s) => (
+    <a
+      href={`#${s.id}`}
+      class="side-nav-dot"
+      data-section={s.id}
+      aria-label={s.label}
+    >
+      <span class="dot-indicator" aria-hidden="true"></span>
+      <span class="dot-label font-mono">{s.label}</span>
+    </a>
+  ))}
+</nav>
+
+<script>
+  const dots = document.querySelectorAll(".side-nav-dot");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          dots.forEach((dot) => dot.classList.remove("active"));
+          const active = document.querySelector(
+            `.side-nav-dot[data-section="${entry.target.id}"]`
+          );
+          if (active) active.classList.add("active");
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll("section[id]").forEach((section) => {
+    observer.observe(section);
+  });
+</script>
+
+<style>
+  .side-nav {
+    position: fixed;
+    left: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 100;
+  }
+
+  /* Hidden on mobile */
+  @media (max-width: 768px) {
+    .side-nav {
+      display: none;
+    }
+  }
+
+  .side-nav-line {
+    position: absolute;
+    left: 4px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      rgba(248, 112, 96, 0.1),
+      rgba(248, 112, 96, 0.5),
+      rgba(248, 112, 96, 0.1)
+    );
+  }
+
+  .side-nav-dot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .dot-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #5a5550;
+    border: 1px solid #8c8680;
+    transition: background 250ms ease, border-color 250ms ease, transform 250ms ease, box-shadow 250ms ease;
+    flex-shrink: 0;
+  }
+
+  .side-nav-dot.active .dot-indicator {
+    background: #f87060;
+    border-color: #f87060;
+    box-shadow: 0 0 8px rgba(248, 112, 96, 0.5);
+    transform: scale(1.2);
+  }
+
+  .dot-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #8c8680;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 200ms ease, transform 200ms ease, color 200ms ease;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .side-nav-dot:hover .dot-label,
+  .side-nav-dot.active .dot-label {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .side-nav-dot.active .dot-label {
+    color: #f87060;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dot-indicator {
+      transition: none;
+    }
+    .dot-label {
+      transition: none;
+    }
+  }
+</style>
