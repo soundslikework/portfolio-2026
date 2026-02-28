@@ -5,14 +5,14 @@ import abProfile from "../assets/ab-profile.jpeg";
 
 <section
   id="hero"
-  class="h-screen flex items-center bg-myColor-900 relative overflow-hidden px-8 md:px-16 lg:px-24"
+  class="h-screen flex items-center bg-myColor-900 relative overflow-hidden px-24 lg:px-32"
 >
   <!-- Dot-grid background texture -->
   <div class="hero-dot-grid absolute inset-0 pointer-events-none"></div>
 
   <!-- Two-column layout -->
   <div
-    class="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center"
+    class="relative z-10 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center"
   >
     <!-- Left: Name + tagline + CTAs -->
     <div>
@@ -21,11 +21,10 @@ import abProfile from "../assets/ab-profile.jpeg";
           <span class="hero-name-inner block">ADAM</span>
         </span>
         <span class="hero-name-line block overflow-hidden">
-          <span class="hero-name-inner block"
-            >BRADY<span class="name-rule" aria-hidden="true"></span></span
-          >
+          <span class="hero-name-inner block">BRADY</span>
         </span>
       </h1>
+      <span class="name-rule" aria-hidden="true"></span>
 
       <p class="hero-tagline font-sans mt-6 mb-10">
         Engineering Manager. Senior Engineer. I lead teams that ship.
@@ -107,7 +106,7 @@ import abProfile from "../assets/ab-profile.jpeg";
   .hero-dot-grid {
     background-image: radial-gradient(
       circle,
-      rgba(255, 255, 255, 0.06) 1px,
+      rgba(255, 255, 255, 0.14) 1px,
       transparent 1px
     );
     background-size: 24px 24px;
@@ -134,15 +133,12 @@ import abProfile from "../assets/ab-profile.jpeg";
 
   /* Coral rule under BRADY */
   .name-rule {
-    display: inline-block;
+    display: block;
     width: 56px;
     height: 3px;
     background: #f87060;
-    vertical-align: middle;
-    margin-left: 16px;
     border-radius: 2px;
-    position: relative;
-    top: -6px;
+    margin-top: 12px;
   }
 
   .hero-tagline {
