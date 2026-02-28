@@ -7,9 +7,7 @@ import TimelineItem from "./TimelineItem.astro";
   class="min-h-screen flex items-center justify-center bg-linear-to-b from-myColor-700 to-myColor-600 py-20"
 >
   <div class="max-w-4xl mx-auto px-6">
-    <h2
-      class="text-6xl md:text-7xl lg:text-8xl font-bold font-mono text-myColor-50 text-center mb-16"
-    >
+    <h2 class="experience-heading text-center mb-16">
       Selected Experience
     </h2>
 
@@ -68,6 +66,13 @@ import TimelineItem from "./TimelineItem.astro";
 </script>
 
 <style>
+  .experience-heading {
+    font-family: var(--font-family-display);
+    font-size: clamp(48px, 8vw, 96px);
+    color: #f0ede8;
+    line-height: 1.05;
+  }
+
   .timeline {
     list-style: none;
     padding: 0;
