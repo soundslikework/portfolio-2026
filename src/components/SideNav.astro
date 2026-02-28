@@ -77,9 +77,9 @@ const sections = [
     width: 1px;
     background: linear-gradient(
       to bottom,
-      rgba(248, 112, 96, 0.1),
-      rgba(248, 112, 96, 0.5),
-      rgba(248, 112, 96, 0.1)
+      rgb(var(--color-accent-rgb) / 0.1),
+      rgb(var(--color-accent-rgb) / 0.5),
+      rgb(var(--color-accent-rgb) / 0.1)
     );
   }
 
@@ -96,8 +96,8 @@ const sections = [
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #5a5550;
-    border: 1px solid #8c8680;
+    background: var(--color-myColor-500);
+    border: 1px solid var(--color-myColor-400);
     transition:
       background 250ms ease,
       border-color 250ms ease,
@@ -107,9 +107,9 @@ const sections = [
   }
 
   .side-nav-dot.active .dot-indicator {
-    background: #f87060;
-    border-color: #f87060;
-    box-shadow: 0 0 8px rgba(248, 112, 96, 0.5);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px rgb(var(--color-accent-rgb) / 0.5);
     transform: scale(1.2);
   }
 
@@ -117,7 +117,7 @@ const sections = [
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #8c8680;
+    color: var(--color-myColor-400);
     opacity: 0;
     transform: translateX(-4px);
     transition:
@@ -135,7 +135,7 @@ const sections = [
   }
 
   .side-nav-dot.active .dot-label {
-    color: #f87060;
+    color: var(--color-accent);
   }
 
   @media (prefers-reduced-motion: reduce) {

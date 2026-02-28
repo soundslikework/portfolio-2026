@@ -6,6 +6,7 @@
   id="contact"
   class="h-screen flex items-center justify-center bg-myColor-900 relative overflow-hidden px-8"
 >
+  <div class="contact-dot-grid absolute inset-0 pointer-events-none"></div>
   <div class="text-center space-y-6 relative z-10 max-w-3xl mx-auto">
     <p class="contact-label font-mono text-sm uppercase tracking-widest">
       Get in Touch
@@ -31,33 +32,42 @@
 </section>
 
 <style>
+  .contact-dot-grid {
+    background-image: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.14) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+
   .contact-label {
-    color: #8c8680;
+    color: var(--color-myColor-400);
     letter-spacing: 0.15em;
   }
 
   .contact-headline {
     font-family: var(--font-family-display);
     font-size: clamp(48px, 8vw, 96px);
-    color: #f0ede8;
+    color: var(--color-text-primary);
     line-height: 1.05;
   }
 
   .contact-link {
-    color: #f0ede8;
+    color: var(--color-text-primary);
     text-decoration: underline;
     text-underline-offset: 4px;
-    text-decoration-color: #f87060;
+    text-decoration-color: var(--color-accent);
     letter-spacing: 0.05em;
     transition: color 200ms ease;
   }
 
   .contact-link:hover {
-    color: #f87060;
+    color: var(--color-accent);
   }
 
   .contact-footer {
-    color: #5a5550;
+    color: var(--color-myColor-500);
     margin-top: 4rem;
   }
 

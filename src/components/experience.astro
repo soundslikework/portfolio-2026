@@ -42,34 +42,32 @@ import TimelineItem from "./TimelineItem.astro";
 
 <script>
   const items = document.querySelectorAll(".timeline-item");
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!prefersReduced) {
+    items.forEach((item) => item.classList.add("is-hidden"));
+  }
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          (entry.target as HTMLElement).style.opacity = "1";
-          (entry.target as HTMLElement).style.transform = "translateY(0)";
+          entry.target.classList.remove("is-hidden");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.15 },
   );
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  items.forEach((item) => {
-    if (!prefersReduced) {
-      (item as HTMLElement).style.opacity = "0";
-      (item as HTMLElement).style.transform = "translateY(24px)";
-      (item as HTMLElement).style.transition = "opacity 0.5s ease, transform 0.5s ease";
-    }
-    observer.observe(item);
-  });
+
+  items.forEach((item) => observer.observe(item));
 </script>
 
 <style>
   .experience-heading {
     font-family: var(--font-family-display);
     font-size: clamp(48px, 8vw, 96px);
-    color: #f0ede8;
+    color: var(--color-text-primary);
     line-height: 1.05;
   }
 
@@ -88,6 +86,6 @@ import TimelineItem from "./TimelineItem.astro";
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(to bottom, #f87060, rgba(248, 112, 96, 0.1));
+    background: linear-gradient(to bottom, var(--color-accent), rgb(var(--color-accent-rgb) / 0.1));
   }
 </style>

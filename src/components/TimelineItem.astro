@@ -38,9 +38,9 @@ const { title, company, year, summary } = Astro.props;
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #f87060;
-    border: 2px solid #fbbdac;
-    box-shadow: 0 0 10px 3px rgba(248, 112, 96, 0.4), 0 0 0 4px rgba(248, 112, 96, 0.1);
+    background: var(--color-accent);
+    border: 2px solid var(--color-accent-light);
+    box-shadow: 0 0 10px 3px rgb(var(--color-accent-rgb) / 0.4), 0 0 0 4px rgb(var(--color-accent-rgb) / 0.1);
     z-index: 1;
   }
 
@@ -56,14 +56,14 @@ const { title, company, year, summary } = Astro.props;
   .timeline-content:hover {
     background: rgba(255, 255, 255, 0.09);
     transform: translateX(5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(248, 112, 96, 0.15);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgb(var(--color-accent-rgb) / 0.15);
   }
 
   /* Year: top label, coral, mono — comes first in DOM order */
   .timeline-year {
     font-size: 0.75rem;
-    color: #f87060;
-    font-family: var(--font-family-title);
+    color: var(--color-accent);
+    font-family: var(--font-mono);
     font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -72,10 +72,10 @@ const { title, company, year, summary } = Astro.props;
 
   /* Company: prominent — large and white */
   .timeline-company {
-    font-family: var(--font-family-body);
+    font-family: var(--font-body);
     font-size: 1.25rem;
     font-weight: 700;
-    color: #f0ede8;
+    color: var(--color-text-primary);
     margin: 0 0 4px 0;
   }
 
@@ -83,14 +83,14 @@ const { title, company, year, summary } = Astro.props;
   .timeline-title {
     font-size: 1rem;
     font-weight: 500;
-    color: #8c8680;
+    color: var(--color-myColor-400);
     margin: 0 0 16px 0;
     font-style: italic;
   }
 
   .timeline-summary {
     font-size: 0.9375rem;
-    color: rgba(240, 237, 232, 0.75);
+    color: rgb(var(--color-text-primary-rgb) / 0.75);
     line-height: 1.7;
     margin: 0;
   }
@@ -105,8 +105,20 @@ const { title, company, year, summary } = Astro.props;
     }
   }
 
+  /* JS-applied hidden state for scroll reveal (added before observe, removed on intersect) */
+  .timeline-item.is-hidden {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .timeline-content {
+      transition: none;
+    }
+    .timeline-item.is-hidden {
+      opacity: 1;
+      transform: none;
       transition: none;
     }
   }

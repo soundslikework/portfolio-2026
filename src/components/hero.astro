@@ -26,7 +26,7 @@ import abProfile from "../assets/ab-profile.jpeg";
       </h1>
       <span class="name-rule" aria-hidden="true"></span>
 
-      <p class="hero-tagline font-sans mt-6 mb-10">
+      <p class="hero-tagline font-body mt-6 mb-10">
         Engineering Manager. Senior Engineer. I lead teams that ship.
       </p>
 
@@ -67,7 +67,7 @@ import abProfile from "../assets/ab-profile.jpeg";
 
   <!-- Scroll indicator -->
   <div
-    class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce"
+    class="absolute bottom-8 left-1/2 -translate-x-1/2 scroll-bounce text-accent"
     aria-hidden="true"
   >
     <svg
@@ -79,7 +79,7 @@ import abProfile from "../assets/ab-profile.jpeg";
     >
       <path
         d="M7 10L12 15L17 10"
-        stroke="#f87060"
+        stroke="currentColor"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"></path>
@@ -116,7 +116,7 @@ import abProfile from "../assets/ab-profile.jpeg";
   .hero-name {
     font-family: var(--font-family-display);
     font-size: clamp(72px, 12vw, 148px);
-    color: #f0ede8;
+    color: var(--color-text-primary);
     position: relative;
   }
 
@@ -136,14 +136,14 @@ import abProfile from "../assets/ab-profile.jpeg";
     display: block;
     width: 56px;
     height: 3px;
-    background: #f87060;
+    background: var(--color-accent);
     border-radius: 2px;
     margin-top: 12px;
   }
 
   .hero-tagline {
     font-size: 1.125rem;
-    color: #8c8680;
+    color: var(--color-myColor-400);
     max-width: 420px;
     line-height: 1.7;
     opacity: 0;
@@ -155,7 +155,7 @@ import abProfile from "../assets/ab-profile.jpeg";
   }
 
   .hero-link {
-    color: #f0ede8;
+    color: var(--color-text-primary);
     text-decoration: none;
     opacity: 0;
     transition:
@@ -170,23 +170,23 @@ import abProfile from "../assets/ab-profile.jpeg";
   }
 
   .hero-link:hover {
-    color: #f87060;
+    color: var(--color-accent);
   }
 
   .location-badge {
-    color: #8c8680;
-    border: 1px solid rgba(248, 112, 96, 0.3);
+    color: var(--color-myColor-400);
+    border: 1px solid rgb(var(--color-accent-rgb) / 0.3);
     padding: 4px 12px;
     border-radius: 9999px;
     letter-spacing: 0.08em;
   }
 
   .location-badge::first-letter {
-    color: #f87060;
+    color: var(--color-accent);
   }
 
   .hero-image-ring {
-    background: linear-gradient(135deg, #f87060, #fbbdac, #f87060);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light), var(--color-accent));
   }
 
   .hero-photo {

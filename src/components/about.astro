@@ -1,5 +1,17 @@
 ---
-
+const skills = [
+  "JavaScript",
+  "React",
+  "Node.js",
+  "TypeScript",
+  "Git",
+  "Design Systems",
+  "React Testing Library",
+  "Python 🐍",
+  "Project Planning",
+  "Linear",
+  "AI Engineering",
+];
 ---
 
 <section
@@ -14,7 +26,7 @@
       ></span>
 
       <p
-        class="text-lg md:text-xl text-myColor-100 mt-6 font-sans leading-relaxed"
+        class="text-lg md:text-xl text-myColor-100 mt-6 font-body leading-relaxed"
       >
         I am a Toronto-based (remote-friendly) Engineering Manager, Senior
         Engineer, delivery lead, and project planner. Full-stack but
@@ -23,7 +35,7 @@
         around deadlines and capacity.
       </p>
       <p
-        class="text-lg md:text-xl text-myColor-100 mt-4 font-sans leading-relaxed"
+        class="text-lg md:text-xl text-myColor-100 mt-4 font-body leading-relaxed"
       >
         I'm passionate about helping engineering teams do their best work —
         through process improvement, coaching, and leveraging AI to keep things
@@ -35,19 +47,7 @@
         </h3>
         <ul class="flex flex-wrap justify-center gap-3 mt-6">
           {
-            [
-              "JavaScript",
-              "React",
-              "Node.js",
-              "TypeScript",
-              "Git",
-              "Design Systems",
-              "React Testing Library",
-              "Python 🐍",
-              "Project Planning",
-              "Linear",
-              "AI Engineering",
-            ].map((skill) => (
+            skills.map((skill) => (
               <li>
                 <span class="skill-badge">{skill}</span>
               </li>
@@ -63,11 +63,11 @@
   .about-heading {
     font-family: var(--font-family-display);
     font-size: clamp(64px, 10vw, 120px);
-    color: #f0ede8;
+    color: var(--color-text-primary);
   }
 
   .heading-accent-bar {
-    background: linear-gradient(to right, #f87060, #fbbdac);
+    background: linear-gradient(to right, var(--color-accent), var(--color-accent-light));
   }
 
   .skill-badge {
@@ -90,10 +90,10 @@
   }
 
   .skill-badge:hover {
-    border-color: #f87060;
-    color: #fbbdac;
-    background: rgba(248, 112, 96, 0.1);
-    box-shadow: 0 0 12px rgba(248, 112, 96, 0.2);
+    border-color: var(--color-accent);
+    color: var(--color-accent-light);
+    background: rgb(var(--color-accent-rgb) / 0.1);
+    box-shadow: 0 0 12px rgb(var(--color-accent-rgb) / 0.2);
   }
 
   @media (prefers-reduced-motion: reduce) {
