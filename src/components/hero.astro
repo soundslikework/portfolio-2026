@@ -5,7 +5,7 @@ import abProfile from "../assets/ab-profile.jpeg";
 
 <section
   id="hero"
-  class="h-screen flex items-center bg-myColor-900 relative overflow-hidden px-24 lg:px-32"
+  class="h-screen flex items-center bg-myColor-900 relative overflow-hidden px-8 md:px-20 lg:px-32"
 >
   <!-- Dot-grid background texture -->
   <div class="hero-dot-grid absolute inset-0 pointer-events-none"></div>
@@ -186,7 +186,12 @@ import abProfile from "../assets/ab-profile.jpeg";
   }
 
   .hero-image-ring {
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-light), var(--color-accent));
+    background: linear-gradient(
+      135deg,
+      var(--color-accent),
+      var(--color-accent-light),
+      var(--color-accent)
+    );
   }
 
   .hero-photo {
