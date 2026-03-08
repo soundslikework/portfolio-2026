@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Adam Brady's blog" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="article" />
+    <title>{title} — Adam Brady</title>
+  </head>
+  <body class="bg-myColor-900 text-text-primary min-h-screen">
+    <header class="blog-header">
+      <nav class="max-w-3xl mx-auto px-6 py-6 flex items-center justify-between">
+        <a href="/" class="blog-nav-link font-mono text-sm">
+          ← Home
+        </a>
+        <a href="/blog" class="blog-nav-link font-mono text-sm">
+          Blog
+        </a>
+      </nav>
+    </header>
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <slot />
+    </main>
+    <footer class="max-w-3xl mx-auto px-6 py-12">
+      <p class="font-mono text-xs text-myColor-500">
+        © 2026 Adam Brady
+      </p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .blog-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .blog-nav-link {
+    color: var(--color-myColor-400);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 200ms ease;
+  }
+
+  .blog-nav-link:hover {
+    color: var(--color-accent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .blog-nav-link {
+      transition: none;
+    }
+  }
+</style>
