@@ -14,7 +14,7 @@ const { title, company, year, summary } = Astro.props;
     <p class="timeline-year">{year}</p>
     <h3 class="timeline-company">{company}</h3>
     <p class="timeline-title">{title}</p>
-    <p class="timeline-summary">{summary}</p>
+    <p class="timeline-summary" set:html={summary} />
   </div>
 </li>
 
@@ -40,7 +40,9 @@ const { title, company, year, summary } = Astro.props;
     border-radius: 50%;
     background: var(--color-accent);
     border: 2px solid var(--color-accent-light);
-    box-shadow: 0 0 10px 3px rgb(var(--color-accent-rgb) / 0.4), 0 0 0 4px rgb(var(--color-accent-rgb) / 0.1);
+    box-shadow:
+      0 0 10px 3px rgb(var(--color-accent-rgb) / 0.4),
+      0 0 0 4px rgb(var(--color-accent-rgb) / 0.1);
     z-index: 1;
   }
 
@@ -50,13 +52,18 @@ const { title, company, year, summary } = Astro.props;
     border-radius: 8px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      box-shadow 0.3s ease;
   }
 
   .timeline-content:hover {
     background: rgba(255, 255, 255, 0.09);
     transform: translateX(5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 0 1px rgb(var(--color-accent-rgb) / 0.15);
+    box-shadow:
+      0 8px 16px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgb(var(--color-accent-rgb) / 0.15);
   }
 
   /* Year: top label, coral, mono — comes first in DOM order */
@@ -109,7 +116,9 @@ const { title, company, year, summary } = Astro.props;
   .timeline-item.is-hidden {
     opacity: 0;
     transform: translateY(24px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition:
+      opacity 0.5s ease,
+      transform 0.5s ease;
   }
 
   @media (prefers-reduced-motion: reduce) {

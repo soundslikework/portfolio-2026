@@ -55,3 +55,24 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent-light);
 }
+
+/* utility */
+
+  .link {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--color-accent);
+    letter-spacing: 0.05em;
+    transition: color 200ms ease;
+  }
+
+  .link:hover {
+    color: var(--color-accent);
+  }
+
+    @media (prefers-reduced-motion: reduce) {
+    .link {
+      transition: none;
+    }
+  }
