@@ -4,7 +4,6 @@ import Hero from "../components/hero.astro";
 import About from "../components/about.astro";
 import Experience from "../components/experience.astro";
 import Contact from "../components/contact.astro";
-import SideNav from "../components/SideNav.astro";
 ---
 
 <html lang="en">
@@ -24,10 +23,12 @@ import SideNav from "../components/SideNav.astro";
       content="Adam Brady - Toronto, Ontario based web developer, senior engineer, engineering manager."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://adambrady.ca" />
+    <meta property="og:image" content="https://adambrady.ca/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
     <title>Adam Brady - Portfolio</title>
   </head>
   <body>
-    <SideNav />
     <Hero />
     <About />
     <Experience />

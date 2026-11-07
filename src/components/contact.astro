@@ -1,17 +1,13 @@
----
-
----
-
 <section
   id="contact"
-  class="h-screen flex items-center justify-center bg-myColor-900 relative overflow-hidden px-8"
+  class="min-h-screen flex items-center justify-center bg-myColor-900 relative overflow-hidden px-8 py-24"
 >
-  <div class="contact-dot-grid absolute inset-0 pointer-events-none"></div>
+  <div class="dot-grid absolute inset-0 pointer-events-none"></div>
   <div class="text-center space-y-6 relative z-10 max-w-3xl mx-auto">
     <p class="contact-label font-mono text-sm uppercase tracking-widest">
       Get in Touch
     </p>
-    <h2 class="contact-headline">
+    <h2 class="section-heading">
       Reach out.<br />Let's connect!
     </h2>
     <a
@@ -32,25 +28,9 @@
 </section>
 
 <style>
-  .contact-dot-grid {
-    background-image: radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.14) 1px,
-      transparent 1px
-    );
-    background-size: 24px 24px;
-  }
-
   .contact-label {
     color: var(--color-myColor-400);
     letter-spacing: 0.15em;
-  }
-
-  .contact-headline {
-    font-family: var(--font-family-display);
-    font-size: clamp(48px, 8vw, 96px);
-    color: var(--color-text-primary);
-    line-height: 1.05;
   }
 
   .contact-footer {

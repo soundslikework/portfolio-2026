@@ -7,20 +7,20 @@ import TimelineItem from "./TimelineItem.astro";
   class="min-h-screen flex items-center justify-center bg-linear-to-b from-myColor-700 to-myColor-600 py-20"
 >
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="experience-heading text-center mb-16">Selected Experience</h2>
+    <h2 class="section-heading text-center mb-16">Selected Experience</h2>
 
     <ul class="timeline">
       <TimelineItem
         title="Engineering Manager"
         company="Relay Financial"
         year="2026 - present"
-        summary="Led team of engineers developing features for Relay's Revenue team. Conducted performance reviews, iterated on team rituals, mentored engineers."
+        summary="Led a team of engineers developing features for Relay's Revenue team. Conducted performance reviews, iterated on team rituals, mentored engineers."
       />
       <TimelineItem
         title="Engineering Manager"
         company="Ada Support"
         year="2025 - 2026"
-        summary="Led 1-2 teams (5-8 engineers at a time) developing features for Ada's AI-powered customer support platform. Planned, managed and delivered key projects like Simulations, MCP server & API improvements, improving security and performance of Ada's systems. Conducted performance reviews, team rituals, mentored engineers. Buit case and promoted 1 engineer."
+        summary="Led 1-2 teams (5-8 engineers at a time) developing features for Ada's AI-powered customer support platform. Planned, managed and delivered key projects like Simulations, MCP server & API improvements, improving security and performance of Ada's systems. Conducted performance reviews, team rituals, mentored engineers. Built a case for and promoted 1 engineer."
       />
       <TimelineItem
         title="Senior Engineer"
@@ -32,7 +32,7 @@ import TimelineItem from "./TimelineItem.astro";
         title="Senior Engineer"
         company="Wattpad"
         year="2022 - 2024"
-        summary=`Led web execution of various projects, including Wattpad's design system and <a class="link" href="https://adambrady.ca/wattpad-publishing-scheduler.pdf">Publishing Scheduler</a>. Worked closely with product managers, designers, and backend engineers
+        summary=`Led web execution of various projects, including Wattpad's design system and <a class="link" href="/wattpad-publishing-scheduler.pdf">Publishing Scheduler</a>. Worked closely with product managers, designers, and backend engineers
       to deliver new features and improve user experience on Wattpad's platform.
       Mentored junior engineers and conducted code reviews to ensure
       high-quality code standards`
@@ -73,13 +73,6 @@ import TimelineItem from "./TimelineItem.astro";
 </script>
 
 <style>
-  .experience-heading {
-    font-family: var(--font-family-display);
-    font-size: clamp(48px, 8vw, 96px);
-    color: var(--color-text-primary);
-    line-height: 1.05;
-  }
-
   .timeline {
     list-style: none;
     padding: 0;
